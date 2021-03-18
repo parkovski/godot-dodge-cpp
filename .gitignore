@@ -1,0 +1,10 @@
+/bin
+src/**/*.obj
+src/**/*.os
+/.import
+/.sconsign.dblite
+/.vscode
+vc*.idb
+vc*.pdb
+*.import
+.DS_Store

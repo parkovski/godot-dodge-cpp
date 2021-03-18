@@ -1,0 +1,10 @@
+-xc++
+-std=c++17
+-I
+../3rd-party/godot-cpp/godot_headers
+-I
+../3rd-party/godot-cpp/include
+-I
+../3rd-party/godot-cpp/include/core
+-I
+../3rd-party/godot-cpp/include/gen
