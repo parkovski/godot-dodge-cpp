@@ -9,7 +9,7 @@ namespace godot {
 class Main : public Node {
   GODOT_CLASS(Main, Node)
 
-  Ref<PackedScene> _mob;
+  Ref<PackedScene> _mob_scene;
   int _score;
 
 public:
@@ -22,8 +22,8 @@ public:
   void _on_ScoreTimer_timeout();
   void _on_MobTimer_timeout();
 
-  void set_mob(Ref<PackedScene> mob) { _mob = mob; }
-  Ref<PackedScene> get_mob() const { return _mob; }
+  void set_mob(Ref<PackedScene> mob) { _mob_scene = mob; }
+  Ref<PackedScene> get_mob() const { return _mob_scene; }
 
   void game_over();
   void new_game();

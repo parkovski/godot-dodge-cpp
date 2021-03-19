@@ -44,7 +44,7 @@ void Main::_on_MobTimer_timeout() {
   mob_spawn_location->set_offset(
     fmod((real_t)rand(), mob_path->get_curve()->get_baked_length())
   );
-  auto mob_node = _mob->instance();
+  auto mob_node = _mob_scene->instance();
   auto mob = Object::cast_to<Mob>(mob_node);
   add_child(mob_node);
   mob->set_position(mob_spawn_location->get_position());
