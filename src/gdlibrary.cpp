@@ -96,7 +96,7 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void *handle) {
   godot::Godot::nativescript_init(handle);
 
   if (!godot::Engine::get_singleton()->is_editor_hint()) {
-    printf("dodge.dll init/%s.\n",
+    printf("dodgethecreeps init/%s.\n",
 #ifdef NDEBUG
            "optimized"
 #else
@@ -105,7 +105,7 @@ extern "C" void GDN_EXPORT godot_nativescript_init(void *handle) {
           );
     wait_for_debugger();
   } else {
-    printf("dodge.dll init/editor.\n");
+    printf("dodgethecreeps init/editor.\n");
   }
 
   godot::register_class<godot::Player>();

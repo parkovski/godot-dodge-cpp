@@ -1,10 +1,10 @@
+#include "HUD.h"
+
 #include <Label.hpp>
 #include <Timer.hpp>
 #include <SceneTree.hpp>
 #include <SceneTreeTimer.hpp>
 #include <Button.hpp>
-
-#include "HUD.h"
 
 using namespace godot;
 

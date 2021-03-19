@@ -20,7 +20,7 @@ opts.Add(EnumVariable('platform', "Compilation platform", '', ['', 'windows', 'x
 opts.Add(EnumVariable('p', "Compilation target, alias for 'platform'", '', ['', 'windows', 'x11', 'linux', 'osx']))
 opts.Add(BoolVariable('use_llvm', "Use the LLVM / Clang compiler", 'no'))
 opts.Add(PathVariable('target_path', 'The path where the lib is installed.', 'bin'))
-opts.Add(PathVariable('target_name', 'The library name.', 'libgdexample', PathVariable.PathAccept))
+opts.Add(PathVariable('target_name', 'The library name.', 'libdodgethecreeps', PathVariable.PathAccept))
 opts.Add(PathVariable('binding_dir', 'Path to Godot C++ bindings.', default_binding_dir))
 opts.Add(PathVariable('headers_dir', 'Path to Godot headers.', '.'))
 opts.Add(PathVariable('godot_library', 'Godot library name.', 'libgodot-cpp', PathVariable.PathAccept))
@@ -35,7 +35,7 @@ opts.Update(env)
 cpp_bindings_path = env['binding_dir']
 godot_headers_path = env['headers_dir']
 if godot_headers_path == '.':
-    godot_headers_path = cpp_bindings_path + '/godot-headers'
+    godot_headers_path = cpp_bindings_path + '/godot_headers'
 cpp_library = env['godot_library']
 
 # Process some arguments
