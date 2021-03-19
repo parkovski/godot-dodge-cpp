@@ -1,7 +1,11 @@
 #!python
 import os
 import sys
-import scons_compiledb
+has_compiledb = True
+try:
+    import scons_compiledb
+except ImportError:
+    has_compiledb = False
 
 VariantDir('obj', 'src', duplicate=0)
 opts = Variables([], ARGUMENTS)
@@ -10,9 +14,10 @@ opts = Variables([], ARGUMENTS)
 env = DefaultEnvironment()
 env.VariantDir('obj', 'src', duplicate=0)
 
-scons_compiledb.enable(env)
+if has_compiledb:
+    scons_compiledb.enable(env)
 
-default_binding_dir = "../3rd-party/godot-cpp"
+default_binding_dir = "godot-cpp"
 
 # Define our options
 opts.Add(EnumVariable('target', "Compilation target", 'debug', ['d', 'debug', 'r', 'release']))
@@ -35,7 +40,7 @@ opts.Update(env)
 cpp_bindings_path = env['binding_dir']
 godot_headers_path = env['headers_dir']
 if godot_headers_path == '.':
-    godot_headers_path = cpp_bindings_path + '/godot_headers'
+    godot_headers_path = cpp_bindings_path + '/godot-headers'
 cpp_library = env['godot_library']
 
 # Process some arguments
@@ -131,4 +136,5 @@ Default(library)
 # Generates help for the -h scons option.
 Help(opts.GenerateHelpText(env))
 
-env.CompileDb()
+if has_compiledb:
+    env.CompileDb()
